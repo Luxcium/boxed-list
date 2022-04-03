@@ -1,0 +1,981 @@
+{
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: EDITOR & TERMINAL                                      !
+  "workbench.iconTheme": "material-icon-theme",
+  "window.zoomLevel": 2,
+  "editor.fontFamily": "'Fira Code iScript','VictorMono Nerd Font',Victor Mono, Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 22,
+  "editor.fontWeight": "500",
+  "terminal.integrated.fontFamily": "'TerminessTTF Nerd Font Mono', 'Anonymice NF', '3270Narrow NF', mono",
+  "terminal.integrated.fontSize": 20,
+  "terminal.integrated.fontWeight": "600",
+  "terminal.integrated.fontWeightBold": "bold",
+  // #endregion: EDITOR & TERMINAL                                   !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: excludes                                               !
+  "files.exclude": {
+    ".directory": true,
+    "dist": false,
+    "out": false
+  },
+  "search.exclude": {
+    "docs": true,
+    "dist": true,
+    "out": true
+  },
+  // #endregion: excludes                                            !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: FORMAT BEHAVIOUR                                       !
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnType": true,
+  "editor.suggest.showFiles": true,
+  "editor.suggest.showFolders": true,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  //                                                                  ――
+  // ―― CODEACTIONSONSAVE BEHAVIOUR:
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.organizeImports",
+    "source.fixAll.eslint",
+    "source.fixAll"
+  ],
+  // #endregion: FORMAT BEHAVIOUR                                    !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: PRETTIER                                               !
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+  "prettier.trailingComma": "all",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 80,
+  "prettier.proseWrap": "preserve",
+  // #endregion: PRETTIER                                            !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: ESLINT                                                 !
+  "eslint.quiet": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.packageManager": "yarn",
+  // #endregion: ESLINT                                              !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: JAVASCRIPT BEHAVIOUR                                   !
+  "javascript.format.enable": true,
+  "javascript.format.semicolons": "insert",
+  "javascript.suggest.paths": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.preferences.useAliasesForRenames": false,
+  "javascript.referencesCodeLens.enabled": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  // #endregion: JAVASCRIPT                                          !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: TYPESCRIPT BEHAVIOUR                                   !
+  "typescript.format.enable": true,
+  "typescript.format.semicolons": "insert",
+  "typescript.suggest.paths": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.check.npmIsInstalled": false,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.useAliasesForRenames": false,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.suggest.autoImports": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.enabled": true,
+  "typescript.suggestionActions.enabled": true,
+  "typescript.surveys.enabled": false,
+  // "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  // #endregion: TYPESCRIPT BEHAVIOUR                                !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: PATH-INTELLISENSE                                      !
+  "path-intellisense.extensionOnImport": false,
+  "path-intellisense.absolutePathToWorkspace": false,
+  "path-intellisense.autoSlashAfterDirectory": false,
+  "path-intellisense.showHiddenFiles": true,
+  // #endregion: PATH-INTELLISENSE                                   !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: BETTER COMMENTS                                        !
+  /*
+     "problemsErrorIcon.foreground": "#ff3366",
+     "problemsInfoIcon.foreground": "#ffcc55ee",
+     "problemsWarningIcon.foreground": "#ccff33",
+  */
+  // "#F36F"
+  // "#F80B"
+  // "#FF0B"
+  // "#0F0B"
+  // "#39FB"
+  // "#93FB"
+  // "#F36F",
+  // "#F364",
+  // "#CF3F",
+  // "#CF34",
+  // "#39CF",
+  // "#39C4",
+  // "#FB0F",
+  // "#FB04",
+  "better-comments.highlightPlainText": true,
+  "better-comments.multilineComments": true,
+  "better-comments.tags": [
+    // #region
+    {
+      "tag": "#region",
+      "color": "#FF3",
+      "strikethrough": false,
+      "backgroundColor": "#FF34"
+    },
+    // #endregion
+    {
+      "tag": "#endregion",
+      "color": "#F15",
+      "strikethrough": false,
+      "backgroundColor": "#F154"
+    },
+    //:
+    {
+      // ~!-----------------------------------------------------------!~
+      "tag": "~!",
+      "color": "#F36",
+      "strikethrough": false,
+      "backgroundColor": "#F365"
+    },
+    {
+      // ~$-----------------------------------------------------------$~
+      "tag": "~$",
+      "color": "#F80",
+      "strikethrough": false,
+      "backgroundColor": "#F806"
+    },
+    {
+      // ~+-----------------------------------------------------------+~
+      "tag": "~+",
+      "color": "#7C2F",
+      "strikethrough": false,
+      "backgroundColor": "#7C25"
+    },
+    {
+      // ~*-----------------------------------------------------------*~
+      "tag": "~*",
+      "color": "#FF0B",
+      "strikethrough": false,
+      "backgroundColor": "#FF05"
+    },
+    {
+      // ~#-----------------------------------------------------------#~
+      "tag": "~#",
+      "color": "#39F",
+      "strikethrough": false,
+      "backgroundColor": "#39F5"
+    },
+    {
+      // ~&-----------------------------------------------------------&~
+      "tag": "~&",
+      "color": "#93F",
+      "strikethrough": false,
+      "backgroundColor": "#93F5"
+    },
+    {
+      // ~@-----------------------------------------------------------@~
+      "tag": "~@",
+      "color": "#F36",
+      "strikethrough": false,
+      "backgroundColor": "#39C3"
+    },
+    {
+      // ~%-----------------------------------------------------------%~
+      "tag": "~%",
+      "color": "#4EF",
+      "strikethrough": false,
+      "backgroundColor": "#4EF5"
+    },
+    {
+      // ~?-----------------------------------------------------------?~
+      "tag": "~?",
+      "color": "#5AF",
+      "strikethrough": false,
+      "backgroundColor": "#4EF3"
+    },
+    // SECTION
+    {
+      "tag": "SECTION",
+      "color": "#4EF",
+      "strikethrough": false
+    },
+    /*
+~ #F36F
+~ #F80B
+~ #FF0B
+~ #0F0B
+~ #39FB
+~ #93FB
+    */
+    // :!
+    {
+      "tag": ":!",
+      "color": "#F20",
+      "strikethrough": false,
+      "backgroundColor": "#F203"
+    },
+    // :~
+    {
+      "tag": ":~",
+      "color": "#FB3",
+      "strikethrough": false,
+      "backgroundColor": "#39C3"
+    },
+    // :@
+    {
+      "tag": ":@",
+      "color": "#F36",
+      "strikethrough": false,
+      "backgroundColor": "#39C6"
+    },
+    // :#
+    {
+      "tag": ":#",
+      "color": "#4AE",
+      "strikethrough": false,
+      "backgroundColor": "#4AE3"
+    },
+    // :$
+    {
+      "tag": ":$",
+      "color": "#F84",
+      "strikethrough": false,
+      "backgroundColor": "#F843"
+    },
+    // :%
+    {
+      "tag": ":%",
+      "color": "#4EF",
+      "strikethrough": false,
+      "backgroundColor": "#4EF3"
+    },
+    // :?
+    {
+      "tag": ":?",
+      "color": "#39F",
+      "strikethrough": false,
+      "backgroundColor": "#39F3"
+    },
+    // :&
+    {
+      "tag": ":&",
+      "color": "#93F",
+      "strikethrough": false,
+      "backgroundColor": "#93F3"
+    },
+    // :*
+    {
+      "tag": ":*",
+      "color": "#9C7",
+      "strikethrough": false,
+      "backgroundColor": "#9C73"
+    },
+    // :+
+    {
+      "tag": ":+",
+      "color": "#CF2",
+      "strikethrough": false,
+      "backgroundColor": "#CF23"
+    },
+    // !-
+    {
+      "tag": "!-",
+      "color": "#F20",
+      "strikethrough": false,
+      "backgroundColor": "#F203"
+    },
+    // @-
+    {
+      "tag": "@-",
+      "color": "#F36",
+      "strikethrough": false,
+      "backgroundColor": "#39C3"
+    },
+    // #-
+    {
+      "tag": "#-",
+      "color": "#4AE",
+      "strikethrough": false,
+      "backgroundColor": "#4AE3"
+    },
+    // $-
+    {
+      "tag": "$-",
+      "color": "#F84",
+      "strikethrough": false,
+      "backgroundColor": "#F843"
+    },
+    // %-
+    {
+      "tag": "%-",
+      "color": "#4EF",
+      "strikethrough": false,
+      "backgroundColor": "#4EF3"
+    },
+    // ?-
+    {
+      "tag": "?-",
+      "color": "#39F",
+      "strikethrough": false,
+      "backgroundColor": "#39F3"
+    },
+    // &-
+    {
+      "tag": "&-",
+      "color": "#93F",
+      "strikethrough": false,
+      "backgroundColor": "#93F3"
+    },
+    // *-
+    {
+      "tag": "*-",
+      "color": "#9C7",
+      "strikethrough": false,
+      "backgroundColor": "#9C73"
+    },
+    // ++
+    {
+      "tag": "++",
+      "color": "#CF2",
+      "strikethrough": false,
+      "backgroundColor": "#CF23"
+    },
+    // :-
+    {
+      "tag": ":-",
+      "color": "#9BE",
+      "strikethrough": false,
+      "backgroundColor": "#9BE3"
+    },
+    {
+      // constructor
+      "tag": "constructor",
+      "color": "#F15E",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // private
+      "tag": "private",
+      "color": "#E22E",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // protected
+      "tag": "protected",
+      "color": "#FD3E",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    /*
+  |-···――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――···-|
+
+    */
+    {
+      // ――
+      "tag": "――",
+      "color": "#FA0C",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // |-···
+      "tag": "|-",
+      "color": "#FA0C",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // ‽
+      "tag": "‽",
+      "color": "#6CBC",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // TEST_MODULE
+      "tag": "TEST_MODULE",
+      "color": "#6CBC",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // public
+      "tag": "public",
+      "color": "#FFAA00CC", // "#FA0E",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // readonly
+      "tag": "readonly",
+      "color": "#FF6600AA",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // static
+      "tag": "static",
+      "color": "#FF6600",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // get
+      "tag": "get",
+      "color": "#6BFC",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // set
+      "tag": "set",
+      "color": "#85FE",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // async
+      "tag": "async",
+      "color": "#FB3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // https:
+      "tag": "https:",
+      "color": "#FB3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // https
+      "tag": "https:",
+      "color": "#FB3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // http
+      "tag": "http",
+      "color": "#FB3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // TODO:
+      "tag": "TODO:",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // iterator
+      "tag": "iterator",
+      "color": "#c54442",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    /*
+~~============================================================================== ~~
+*/
+    /*
+
+
+
+ ―1----------------------------------------------------------------------------- ~~
+    */
+    {
+      // ―1
+      "tag": "―1",
+      "color": "#F36F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 1―
+      "tag": "1―",
+      "color": "#F36F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // -1
+      "tag": "―1",
+      "color": "#F36F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 1-
+      "tag": "1-",
+      "color": "#F36F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // ―― END
+      "tag": "―― END",
+      "color": "#F36D",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // END
+      "tag": "END",
+      "color": "#F36D",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // ERROR
+      "tag": "ERROR",
+      "color": "#F36D",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    // "#F36"
+    // "#F80B"
+    // "#FF0B"
+    // "#0F0B"
+    // "#39FB"
+    // "#93FB"
+    /*
+ ―1============================================================================= ~~
+ ―2----------------------------------------------------------------------------- ~~
+    */
+    {
+      // ―2
+      "tag": "―2",
+      "color": "#CF3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 2―
+      "tag": "2―",
+      "color": "#CF3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // -2
+      "tag": "-2",
+      "color": "#CF3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 2-
+      "tag": "2-",
+      "color": "#CF3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // WARNING
+      "tag": "WARNING",
+      "color": "#CF3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // ―― START
+      "tag": "―― START",
+      "color": "#CF3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // START
+      "tag": "START",
+      "color": "#CF3F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    /*
+ ―2============================================================================= ~~
+ ―3----------------------------------------------------------------------------- ~~
+    */
+    {
+      // ―3
+      "tag": "―3",
+      "color": "#FB0F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // -3
+      "tag": "-3",
+      "color": "#FB0F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 3―
+      "tag": "3―",
+      "color": "#FB0F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 3-
+      "tag": "3-",
+      "color": "#FB0F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // INFO
+      "tag": "INFO",
+      "color": "#FB0F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    /*
+ ―3============================================================================= ~~
+ ―4----------------------------------------------------------------------------- ~~
+    */
+    {
+      // ―4
+      "tag": "―4",
+      "color": "#39CF",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 4―
+      "tag": "4―",
+      "color": "#39CF",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // -4
+      "tag": "-4",
+      "color": "#39CF",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 4-
+      "tag": "4-",
+      "color": "#39CF",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // HINT
+      "tag": "HINT",
+      "color": "#39CF",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    /*
+ ―4============================================================================= ~~
+ ―5----------------------------------------------------------------------------- ~~
+    */
+    {
+      // ―5
+      "tag": "―5",
+      "color": "#39FD",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    /*
+ ―5============================================================================= ~~
+ ―6----------------------------------------------------------------------------- ~~
+    */
+    {
+      // ―6
+      "tag": "―6",
+      "color": "#93FD",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    /*
+―6============================================================================== ~
+*/
+    /*
+―6============================================================================== ~
+―0------------------------------------------------------------------------------ ~
+*/
+    {
+      // ―0
+      "tag": "―0",
+      "color": "#FFFD",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // 0-
+      "tag": "0-",
+      "color": "#FFFD",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    /*
+―0============================================================================== ~
+*/
+    /*
+················································································
+================================================================================
+*/
+    {
+      // ====
+      "tag": "====",
+      "color": "#FA0C",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    // ·········································································
+    {
+      // ···
+      "tag": "···",
+      "color": "#FA0C",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // !!
+      "tag": "!!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // @
+      "tag": "-@",
+      "color": "#F36B",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // #
+      "tag": "#",
+      "color": "#4AE",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // $
+      "tag": "$",
+      "color": "#f48e41",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    //
+    {
+      // %
+      "tag": "%",
+      "color": "#41e2f4",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // ?
+      "tag": "?",
+      "color": "#39FB",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // &
+      "tag": "&",
+      "color": "#93FB",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // *
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // _
+      "tag": "_",
+      "color": "#F80B",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    // {
+    //   // =
+    //   "tag": "=",
+    //   "color": "#F36B",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    {
+      // +
+      "tag": "+",
+      "color": "#c5f442",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // †
+      "tag": "†",
+      "color": "#c54442",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      // ¬
+      "tag": "¬",
+      "color": "#FF0B",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    // {
+    //   // ~
+    //   "tag": "~",
+    //   "color": "#FF6600DD",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    // {
+    //   // -
+    //   "tag": "-",
+    //   "color": "#9BEA",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    {
+      "tag": "BUG",
+      "color": "#F15",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "CONSOLE",
+      "color": "#FB3",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "ERROR",
+      "color": "#F36",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "FIXME",
+      "color": "#F80",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "HACK",
+      "color": "#93F",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "HINT",
+      "color": "#39C",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "INFO",
+      "color": "#FB0",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    // {
+    //   "tag": "LOG",
+    //   "color": "#ACF",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    // {
+    //   "tag": "TODO:",
+    //   "color": "#FB3",
+    //   "strikethrough": false,
+    //   "backgroundColor": "transparent"
+    // },
+    {
+      "tag": "WARNING",
+      "color": "#BF2",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "XXX",
+      "color": "#E22",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    }
+  ],
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  // #endregion: BETTER COMMENTS                                     !
+  /*
+  |-····―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――··-|
+  */
+  // #region: CUSTOMS RULES                                          !
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontFamily": "'VictorMono Nerd Font', 'hurmit Nerd Font mono','ProFontWindows Nerd Font mono','meslolgl Nerd Font mono','Iosevka Nerd Font Mono','SauceCodePro Nerd Font','ProFontIIx Nerd Font',mono"
+    // "editor.fontSize": 26,
+    // "editor.fontWeight": "400",
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.fontFamily": "'VictorMono Nerd Font', 'hurmit Nerd Font mono','ProFontWindows Nerd Font mono','meslolgl Nerd Font mono','Iosevka Nerd Font Mono','SauceCodePro Nerd Font','ProFontIIx Nerd Font',mono"
+    // "editor.fontSize": 22,
+    // "editor.fontWeight": "500",
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.fontFamily": "'VictorMono Nerd Font', 'hurmit Nerd Font mono','ProFontWindows Nerd Font mono','meslolgl Nerd Font mono','Iosevka Nerd Font Mono','SauceCodePro Nerd Font','ProFontIIx Nerd Font',mono"
+    // "editor.fontSize": 22,
+    // "editor.fontWeight": "500",
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
+  // #endregion: CUSTOMS RULES                                       !
+}
