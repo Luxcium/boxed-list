@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "references": [
+    {
+      "path": "../src"
+    }
+  ],
+  "exclude": [],
+  "compilerOptions": {
+    "noEmit": false,
+    "composite": true,
+    "rootDir": ".",
+    "outDir": "../.tmp/emit/test"
+  }
+}
