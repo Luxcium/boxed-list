@@ -1,0 +1,44 @@
+{
+  "references": [
+    {
+      "path": "scripts"
+    },
+    {
+      "path": "src"
+    },
+    {
+      "path": "test"
+    }
+  ],
+  // Exclude references and emitted output
+  "exclude": [
+    "src",
+    "test",
+    "**/*.test.*",
+    "scripts",
+    "out"
+  ],
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "composite": true,
+    "rootDir": ".",
+    "paths": {
+      "fantasy-laws": [
+        "./types/fantasy-laws.d.ts"
+      ],
+      "sanctuary-show": [
+        "./types/sanctuary-show.d.ts"
+      ],
+      "sanctuary-type-classes": [
+        "./types/sanctuary-type-classes.d.ts"
+      ]
+    },
+    // We can't pass "noEmit" in incremental mode, but this is close enough.
+    "outDir": "./.tmp/build",
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "generateCpuProfile": "./.tmp/performance/cpu-info.cpuprofile"
+  }
+}
