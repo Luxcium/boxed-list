@@ -1,0 +1,26 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "."
+  ],
+  "exclude": [],
+  "compilerOptions": {
+    "noEmit": false,
+    "composite": true,
+    "outDir": "../.tmp/emit/scripts",
+    "target": "ES2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": [],
+    "sourceMap": false,
+    "declaration": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "stripInternal": true,
+  },
+}
