@@ -1,7 +1,13 @@
-# @luxcium/parallel-mapping v0.0.0-rc-0.0.2
+# @luxcium/boxed-list v0.0.0-PRE_ALPHA-v0.0x
 
-Development phase: no tests, no documentation, full TypeScript support parallele IO and Worker Threads mapping support with limits of concurent tasks.
+**Development phase:** *No documentation, no tests, full TypeScript support.*
 
+## MIT Style License
+
+### Copyright &copy; 2022 Benjamin Vincent Kasapoglu (Luxcium)
+#### † Scientia es lux principium✨ ™
+
+<!--
 ## Installation
 
 Using npm:
@@ -131,15 +137,12 @@ async function IO_Mapper_miniExample(values: number[]) {
 // run the example:
 IO_Mapper_miniExample([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 ```
+ -->
 
-### MIT Style Liscense
-
-#### Copyright &copy; 2021 Benjamin Vincent Kasapoglu (Luxcium)
-
+<!--
 based on work by Alex Ewerlöf described in his _Async Map With Limited Parallelism In Node Js_ [blog post](https://medium.com/@alexewerlof/async-map-with-limited-parallelism-in-node-js-2b91bd47af70) on Medium. (Copyright © 2020-2021 Alex Ewerlöf for the source code) (CC0 1.0 Universal (CC0 1.0)
 Public Domain Dedication for the Medium Article)
 
-<!--
 ```
 (alias) function CPU_Mapper(filename: string): <T, R>(list: T[], mapFn: Mapper<T, R>, limit?: number | undefined) => {
     mapper: () => Promise<PromiseSettledResult<R>[]>;
