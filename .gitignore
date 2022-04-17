@@ -27,6 +27,8 @@ out/
 /build
 /cache
 /coverage
+/doc
+/docs
 /keys
 /log
 /obj
