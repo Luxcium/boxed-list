@@ -79,7 +79,7 @@ export async function main2() {
   }
   return false;
 }
-main2();
+// main2//();
 
 async function main1(): Promise<void> {
   const box = BoxedAsyncGenerator.of([1, 2, 3, 4]);

@@ -1,6 +1,6 @@
 import { IUnbox } from '.';
 
-/** IUnboxList<T> extends IUnbox<T[]> */
+/** IUnboxList extends IUnbox */
 export interface IUnboxList<T> extends IUnbox<T[]> {
   /**
    * The `unbox` _methode_ lift out the value contained inside this functor.  \

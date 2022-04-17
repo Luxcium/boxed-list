@@ -1,5 +1,5 @@
-/** IValue<T> */
+/** `IValue<T>` */
 export interface IValue<T> {
-  /** extends IValue<T> interface */
+  /** extends `IValue<T>` interface */
   value: T;
 }

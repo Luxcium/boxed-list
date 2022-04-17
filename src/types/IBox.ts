@@ -1,6 +1,6 @@
 import { tBox } from '../Box/types/tBox';
 
-/** IBox<T> */
+/** IBox */
 export interface IBox<T> {
   box: tBox<T>;
 }

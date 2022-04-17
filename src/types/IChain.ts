@@ -1,6 +1,6 @@
 import { IMap } from './IMap';
 
-/** IChain<T> extends IMap<T> */
+/** IChain extends [[IMap]] */
 export interface IChain<T> extends IMap<T> {
   chain<R>(fn: (value: T) => R): R;
 }
