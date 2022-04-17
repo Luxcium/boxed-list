@@ -16,6 +16,7 @@
     "simple-import-sort",
     "import",
     "jsdoc",
+    "tsdoc",
     "@typescript-eslint"
   ],
   "extends": [
@@ -41,11 +42,23 @@
     "arrow-body-style": "off",
     "no-confusing-arrow": "off",
     "prefer-arrow-callback": "off",
-    "curly": ["warn", "multi-line", "consistent"],
-    "indent": ["off"],
-    "linebreak-style": ["off"],
-    "quotes": ["off"],
-    "semi": ["off"],
+    "curly": [
+      "warn",
+      "multi-line",
+      "consistent"
+    ],
+    "indent": [
+      "off"
+    ],
+    "linebreak-style": [
+      "off"
+    ],
+    "quotes": [
+      "off"
+    ],
+    "semi": [
+      "off"
+    ],
     // "comma-dangle": [
     //   "warn",
     //   "only-multiline"
@@ -81,6 +94,7 @@
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/space-infix-ops": "off",
     "@typescript-eslint/type-annotation-spacing": "off",
+    "tsdoc/syntax": 0,
     /*
   ―――――――― unicorn ―――――――――――――――――――――――――――――――――――――――――――――――――――
     */
@@ -175,7 +189,7 @@
     "import/no-self-import": "error",
     "import/no-useless-path-segments": "warn",
     "import/no-unresolved": 0,
-    "import/named": 0,
+    "import/named": 1,
     "import/default": 0,
     "import/namespace": "error",
     "import/no-restricted-paths": 0,
@@ -183,7 +197,7 @@
     "import/no-dynamic-require": 0,
     "import/no-internal-modules": 0,
     "import/no-webpack-loader-syntax": 0,
-    "import/no-cycle": 0,
+    "import/no-cycle": 1,
     "import/no-relative-parent-imports": 0,
     /* Helpful warnings */
     "import/export": "error",
