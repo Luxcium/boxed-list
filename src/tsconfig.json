@@ -3,28 +3,14 @@
   "include": [
     "."
   ],
-  "exclude": [],
+  "exclude": [
+    "node_modules"
+  ],
   "compilerOptions": {
+    /* Emit Options */
     "noEmit": false,
     "composite": true,
-    // "rootDir": ".",
-    // "outDir": "../build",
     "emitDeclarationOnly": false,
-    // "compilerOptions": {
-    // "rootDir": ".",
-    // "outDir": ".tmp/tsc/root",
-    // "emitDeclarationOnly": true,
-    // "compilerOptions": {
-    /* Module Resolution Interop Constraints */
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "preserveSymlinks": true,
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    /* Emit Options */
     "newLine": "lf",
     "rootDir": ".",
     "outDir": "../out/src",
@@ -39,11 +25,19 @@
     "downlevelIteration": true,
     "emitBOM": false,
     "pretty": true,
-    // "preserveConstEnums": false,
     "stripInternal": false,
     "experimentalDecorators": true,
     "generateCpuProfile": "../out/performance/cpu-info.cpuprofile",
     "emitDecoratorMetadata": true,
+    /* Module Resolution Interop Constraints */
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "preserveSymlinks": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     /* Source Map and declaration options */
     "declaration": true,
     "declarationMap": true,
@@ -72,8 +66,8 @@
       "jest"
     ],
     /* Completeness */
-    "skipDefaultLibCheck": false,
-    "skipLibCheck": false,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
     "noResolve": false,
     /* Type Checking */
     /*  ALWAYS FALSE NEVER ALLOW-UNUSED-LABELS & ALLOW-UNREACHABLE-CODE FALSE */
@@ -96,10 +90,17 @@
     /*  ALWAYS TRUE  */ "noFallthroughCasesInSwitch": true /*    ALWAYS TRUE  */,
     /*  ALWAYS TRUE  */ "noImplicitReturns": true /*             ALWAYS TRUE  */,
     /*  ALWAYS TRUE  */ "noUnusedLocals": true /*                ALWAYS TRUE  */,
-    /*  ALWAYS TRUE  */ "noUnusedParameters": true /*            ALWAYS TRUE  */
+    /*  ALWAYS TRUE  */ "noUnusedParameters": true /*            ALWAYS TRUE  */,
     /* ALWAYS TRUE STRICT TYPE-CHECKING ADDITIONAL CHECKS MUST ALWAYS BE TRUE */
     /*                */
     /* Extra settings */
+    /* Vebosity */
+    "diagnostics": true,
+    // "extendedDiagnostics": true,
+    // "listEmittedFiles": true,
+    // "listFiles": true,
+    // "traceResolution": true,
+    // "listFilesOnly": true,
   }
 }
 /* Visit https://aka.ms/tsconfig.json to read more about this file */

@@ -16,10 +16,11 @@
     "test",
     "**/*.test.*",
     "scripts",
-    "out"
+    "out",
+    // "node_modules"
   ],
   "compilerOptions": {
-    "target": "ES2015",
+    "target": "ESNext",
     "module": "CommonJS",
     "moduleResolution": "node",
     "composite": true,
@@ -39,6 +40,9 @@
     "outDir": "./.tmp/build",
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true,
-    "generateCpuProfile": "./.tmp/performance/cpu-info.cpuprofile"
+    "generateCpuProfile": "./.tmp/performance/cpu-info.cpuprofile",
+    /* Completeness */
+    "skipLibCheck": true,
+    "noResolve": false,
   }
 }

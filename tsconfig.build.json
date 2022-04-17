@@ -49,9 +49,14 @@
     // "generateCpuProfile": "./out/performance/cpu-info.cpuprofile",
     // "generateCpuProfile": "./performance/.cpuprofile",
     /* Specify a set of bundled library declaration files that describe the target runtime environment. */
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     /* Specify type package names to be included without being referenced in a source file. */
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     /* Completeness */
     "skipDefaultLibCheck": false,
     "skipLibCheck": false,
@@ -105,8 +110,15 @@
     // "jsxImportSource": "",
     // "reactNamespace": "",
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["**/tests/", "**/Untitled*", "**/*unnamed*"]
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "**/tests/",
+    "**/Untitled*",
+    "**/*unnamed*",
+    "node_modules"
+  ]
 }
 /* Visit https://aka.ms/tsconfig.json to read more about this file */
 /* Projects */

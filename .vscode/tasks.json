@@ -9,6 +9,8 @@
     "panel": "shared",
     "showReuseMessage": true,
     "clear": true,
+    "revealProblems": "always",
+    "close": false,
     "group": "watchers"
   },
   "tasks": [
@@ -43,47 +45,20 @@
         "panel": "dedicated",
         "reveal": "never",
         "revealProblems": "onProblem",
+        "close": false,
         "showReuseMessage": false
       },
       "problemMatcher": {
         "base": "$tsc",
-        "applyTo": "allDocuments"
-      }
-    },
-    {
-      "label": "MAIN Runer",
-      "type": "shell",
-      "detail": "Run project main development entry point to test the curent functionalities",
-      "command": "${workspaceFolder}/scripts/F5:start:run.sh",
-      "dependsOn": "TSC Build Task",
-      "runOptions": {
-        "instanceLimit": 1,
-        "reevaluateOnRerun": true,
-        "runOn": "default"
-      },
-      "presentation": {
-        "clear": true,
-        "echo": true,
-        "focus": true,
-        "group": "TSC Builder",
-        "panel": "dedicated",
-        "reveal": "always",
-        "revealProblems": "never",
-        "showReuseMessage": false
-      },
-      "problemMatcher": {
-        "base": "$tsc",
-        "applyTo": "allDocuments"
-      },
-      "group": {
-        "kind": "test",
-        "isDefault": true
+        "applyTo": "allDocuments",
+        "severity": "info"
       }
     },
     {
       "label": "Linting",
-      "type": "shell",
-      "command": "yarn linting",
+      "type": "npm",
+      "script": "fix:and:json",
+      "detail": "Hard linting process for this Type-Script project",
       "presentation": {
         "panel": "dedicated",
         "group": "Linting",
@@ -94,51 +69,7 @@
         "reveal": "always",
         "showReuseMessage": true
       },
-      "problemMatcher": {
-        "base": "$eslint-compact",
-        "owner": "eslint",
-        "applyTo": "allDocuments",
-        "fileLocation": ["absolute"]
-        // // /home/luxcium/dev/questrade-ts/src/private/core/next-rate-limiter/core_limiter.ts: line 121, col 3, Error - Expected an assignment or function call and instead saw an expression. (no-unused-expressions)
-        // "pattern": {
-        //   "regexp": "^(.+):\\s(.+)\\((.+)\\)\\sat\\s(.+):(\\d+):(\\d+):$",
-        //   "file": 1,
-        //   "line": 2,
-        //   "column": 3,
-        //   "severity": 4,
-        //   "message": 5,
-        // }
-      }
-    },
-    {
-      "label": "Lint",
-      "type": "shell",
-      "command": "yarn lint",
-      "presentation": {
-        "panel": "dedicated",
-        "group": "TSC Builder",
-        "focus": false,
-        "echo": false,
-        "clear": true,
-        "revealProblems": "onProblem",
-        "reveal": "silent",
-        "showReuseMessage": true
-      },
-      "problemMatcher": {
-        "base": "$eslint-compact",
-        "owner": "eslint",
-        "applyTo": "allDocuments",
-        "fileLocation": ["absolute"],
-        // /home/luxcium/dev/questrade-ts/src/private/core/next-rate-limiter/core_limiter.ts: line 121, col 3, Error - Expected an assignment or function call and instead saw an expression. (no-unused-expressions)
-        "pattern": {
-          "regexp": "^(.+):\\s(.+)\\((.+)\\)\\sat\\s(.+):(\\d+):(\\d+):$",
-          "file": 1,
-          "line": 2,
-          "column": 3,
-          "severity": 4,
-          "message": 5
-        }
-      }
+      "problemMatcher": ["$eslint-stylish"]
     }
   ]
 }
