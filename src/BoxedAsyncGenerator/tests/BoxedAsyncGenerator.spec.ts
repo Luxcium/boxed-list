@@ -1,4 +1,8 @@
-export {};
+import { BoxedAsyncGenerator } from '../BoxedAsyncGenerator';
+
 describe('TODO:', () => {
-  it.todo('should test BoxedAsyncGenerator');
+  test('should test BoxedAsyncGenerator', () => {
+    const expected = BoxedAsyncGenerator;
+    expect(expected).toBe(BoxedAsyncGenerator);
+  });
 });

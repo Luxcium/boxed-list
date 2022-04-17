@@ -10,7 +10,8 @@ module.exports = {
 
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
 
-  verbose: true,
+  // verbose: true,
+  verbose: false,
 
   //
   // automock: true,
@@ -60,7 +61,7 @@ module.exports = {
   // moduleNameMapper: [], // [] ["object<string, string | 'array<string>>'"],
   // modulePathIgnorePatterns: [], // [] ['array<string>'],
   // modulePaths: [], // [] ['array<string>'],
-  notify:   false,
+  notify: true,
   notifyMode: 'change',
   // preset: '[string]',
   // prettierPath: '[string]',
@@ -85,6 +86,9 @@ module.exports = {
     './src/**/tests/*.[jt]s?(x)',
     '**/?(*.)+(spec|test).[jt]s?(x)',
   ], // [] ['array<string>'],
+  testPathIgnorePatterns: [
+    './out'
+  ]
   // testPathIgnorePatterns: [], // [] ['array<string>'],
   // testRegex: [], // [] ["string | 'array<string>'"],
   // testResultsProcessor: '[string]',
