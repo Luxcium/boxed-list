@@ -1,3 +1,7 @@
+/** PROJECT LEVEL
+ *
+ * @packageDocumentation
+ */
 // import {
 //   getSign,
 //   nullOrDefined,
@@ -20,36 +24,18 @@
 //   zalgo2,
 //   zalgo3,
 // } from '../utils';
-
 export { Box, boxFrom, boxOf } from './Box';
 export { BoxedAsyncGenerator } from './BoxedAsyncGenerator/BoxedAsyncGenerator';
 export { BoxedGenerator } from './BoxedGenerator/BoxedGenerator';
 export { BoxedList, boxedListFrom, boxedListOf } from './BoxedList';
 export type {
   IApply,
+  IBox,
   IChain,
   IMap,
   IMapItems,
   IUnbox,
   IUnboxList,
+  IValue,
 } from './types';
-// export {
-//   cpuCount,
-//   getSign,
-//   immediateZalgo,
-//   isAllArrays,
-//   isArray,
-//   nextTickZalgo,
-//   nullOrDefined,
-//   restrainingZalgo,
-//   splitedHead,
-//   splitedTail,
-//   splitHead,
-//   splitTail,
-//   timeoutZalgo,
-//   utils,
-//   zalgo,
-//   zalgo1,
-//   zalgo2,
-//   zalgo3,
-// };
+export { cpuCount } from './utils';
