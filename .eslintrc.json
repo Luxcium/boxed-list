@@ -42,23 +42,11 @@
     "arrow-body-style": "off",
     "no-confusing-arrow": "off",
     "prefer-arrow-callback": "off",
-    "curly": [
-      "warn",
-      "multi-line",
-      "consistent"
-    ],
-    "indent": [
-      "off"
-    ],
-    "linebreak-style": [
-      "off"
-    ],
-    "quotes": [
-      "off"
-    ],
-    "semi": [
-      "off"
-    ],
+    "curly": ["warn", "multi-line", "consistent"],
+    "indent": ["off"],
+    "linebreak-style": ["off"],
+    "quotes": ["off"],
+    "semi": ["off"],
     // "comma-dangle": [
     //   "warn",
     //   "only-multiline"

@@ -15,10 +15,29 @@
   },
   "tasks": [
     {
+      "label": "Linting",
+      "type": "npm",
+      "script": "fix:and:json",
+      "detail": "Hard linting process for this Type-Script project",
+      "group": "build",
+      "presentation": {
+        "panel": "dedicated",
+        "group": "Linting",
+        "focus": false,
+        "echo": false,
+        "clear": true,
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "showReuseMessage": true
+      },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
       "label": "TSC Build Task",
       "type": "shell",
       "detail": "Output watcher for this Type-Script project",
       "command": "npx",
+      "dependsOn": ["Linting"],
       "group": {
         "kind": "build",
         "isDefault": true
@@ -53,23 +72,6 @@
         "applyTo": "allDocuments",
         "severity": "info"
       }
-    },
-    {
-      "label": "Linting",
-      "type": "npm",
-      "script": "fix:and:json",
-      "detail": "Hard linting process for this Type-Script project",
-      "presentation": {
-        "panel": "dedicated",
-        "group": "Linting",
-        "focus": false,
-        "echo": false,
-        "clear": true,
-        "revealProblems": "onProblem",
-        "reveal": "always",
-        "showReuseMessage": true
-      },
-      "problemMatcher": ["$eslint-stylish"]
     }
   ]
 }

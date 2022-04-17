@@ -1,8 +1,6 @@
 {
   "disableSources": true,
-  "entryPoints": [
-    "./src/index.ts"
-  ],
+  "entryPoints": ["./src/index.ts"],
   "excludePrivate": true,
   "excludeProtected": true,
   "out": "doc",
