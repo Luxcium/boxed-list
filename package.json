@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": false,
   "description": "",
-  "main": "./out/index.js",
+  "main": "./out/src/index.js",
   "types": "./out/typings/index.d.ts",
   "engines": {
     "node": ">= 12"

@@ -16,7 +16,7 @@
     "test",
     "**/*.test.*",
     "scripts",
-    "out",
+    // "out",
     // "node_modules"
   ],
   "compilerOptions": {
