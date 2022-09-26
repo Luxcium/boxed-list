@@ -7,10 +7,7 @@
   "jsxSingleQuote": false,
   "overrides": [
     {
-      "files": [
-        "scripts/*.ts",
-        "src/core/classes/utilities/files/fs.ts"
-      ],
+      "files": ["scripts/*.ts", "src/core/classes/utilities/files/fs.ts"],
       "options": {
         "printWidth": 120
       }
