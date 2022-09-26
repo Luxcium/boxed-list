@@ -83,6 +83,18 @@ describe('TODO:', () => {
   });
 });
 
+describe('Static Methods and type inference', () => {
+  test('from method takes (IUnboxList<TVal> | IUnbox<TVal[]>)[]', () => {
+    //
+    const expected = BoxedGenerator.from(BoxedList.of('XYZ'));
+    expect(expected.unbox()).toStrictEqual(['XYZ']);
+  });
+  test('of method ', () => {
+    //
+    const expected = BoxedGenerator.of('XYZ');
+    expect(expected.unbox()).toStrictEqual(['XYZ']);
+  });
+});
 // BoxedGenerator.of('XYZ').asyncSpark;
 // BoxedGenerator.of('XYZ').asyncUnbox;
 // BoxedGenerator.of('XYZ').awaitedMap;

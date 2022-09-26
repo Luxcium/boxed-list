@@ -9,9 +9,9 @@ module.exports = {
   },
 
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
-
-  // verbose: true,
-  verbose: false,
+//
+  verbose: true,
+  // verbose: false,
 
   //
   // automock: true,
@@ -61,7 +61,7 @@ module.exports = {
   // moduleNameMapper: [], // [] ["object<string, string | 'array<string>>'"],
   // modulePathIgnorePatterns: [], // [] ['array<string>'],
   // modulePaths: [], // [] ['array<string>'],
-  notify: true,
+  notify: false,
   notifyMode: 'change',
   // preset: '[string]',
   // prettierPath: '[string]',

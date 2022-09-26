@@ -12,6 +12,7 @@ describe('Testing Box specification', () => {
       BoxedList.of([1, 2, 3, 4, 5, 6, 7, 8, 9]).unbox()
     );
   });
+
   test('BoxedList of one array', () => {
     expect(BoxedList.of([1, 2, 3, 4, 5, 6, 7, 8, 9]).unbox()).toStrictEqual(
       BoxedList.of(1, 2, 3, 4, 5, 6, 7, 8, 9).unbox()
@@ -137,7 +138,15 @@ describe('Testing Box specification', () => {
         .flat()
     ).toStrictEqual([1, 2, 3]);
   });
+  test('BoxedList lenght property on many items', () => {
+    expect(BoxedList.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9).length).toBe(10);
+  });
 
+  test('BoxedList @@iterator', () => {
+    expect(
+      BoxedList.of(...BoxedList.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).length
+    ).toBe(10);
+  });
   test('box property', () => {
     const expected = BoxedList.of(['Chocolates']);
     expect(expected.box).toStrictEqual(Box.of(['Chocolates']));
