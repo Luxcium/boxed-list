@@ -2,6 +2,7 @@ import type { IApply, IBox, IChain, IMap, IUnbox, IValue } from '../types';
 
 /**
  * This is the doc comment for Box class
+ *
  */
 export default class Box<T>
   implements IApply<T>, IChain<T>, IMap<T>, IUnbox<T>, IBox<T>, IValue<T>
@@ -10,7 +11,7 @@ export default class Box<T>
   private boxedValue: T;
 
   // static ============================================-| of() |-====
-  public static of<TVal>(value: TVal) {
+  public static of<TVal>(value: TVal): Box<TVal> {
     return new Box(value);
   }
 
@@ -46,7 +47,7 @@ export default class Box<T>
 
   public 'fantasy-land/map' = this.map;
   // public IMap<T> & 'fantasy-land/map' ==============-| map() |-====
-  public map<R>(fn: (value: T, index?: -1) => R) {
+  public map<R>(fn: (value: T, index?: -1) => R): Box<R> {
     return Box.of(fn(this.#value, -1));
   }
 
@@ -54,7 +55,10 @@ export default class Box<T>
   public unbox(): T {
     return this.#value;
   }
-
+  // public IUnbox<T> ===============================-| unbox() |-====
+  public join(): T {
+    return this.#value;
+  }
   // get IBox<T> ========================================-| box |-====
   public get box() {
     return Box.of(this.unbox());
