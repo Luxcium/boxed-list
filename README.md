@@ -7,25 +7,57 @@
 ### Copyright &copy; 2022 Benjamin Vincent Kasapoglu (Luxcium)
 #### † Scientia es lux principium✨ ™
 
-<!--
+
 ## Installation
 
-Using npm:
+Using pnpm:
 
 ```bash
-  $ npm install --save @luxcium/parallel-mapping
+  $ pnpm add --save-prod @luxcium/parallel-mapping
 ```
 
 Using yarn:
 
 ```bash
-  $ yarn add @luxcium/parallel-mapping
+  $ yarn add --caret @luxcium/parallel-mapping
 ```
+Using npm:
 
+```bash
+  $ npm add --save-prod @luxcium/parallel-mapping
+```
 ## APIs
 
 ### Abstract (summary)
 
+Array.map() is a very useful function because it let you chain many invocations one after the other.
+
+It would be nice to do such a thing on many other types or to chain other kind of mapping utilities like one that would handle asycronious code unfortunately, it only works with synchronous functions.
+
+A simple workaround for using async map functions is to use Promise.all() or its more tolerant brother Promise.allSettled()
+
+What if such thing would be baked in the box.
+
+We propose you 3 kinds of boxes to handle this usecases:
+
+## Box\<T\>
+
+**Box is:**
+ - **An Applicative** of type `Box<T>`
+
+    To put something inside the box use the static method *of* `Box.of<string>('something')` where the generic type anotation is optional. it can contain any value.
+
+ - **A Functor** of return type `Box<R>`
+
+    To interact on the internal value use the instance method `box.map<number>(something => something.length)` where the optional generic type anotation is the `R` return type of the mapping function.
+
+
+  Applicative Apply<T>, Chain<T>, Map<T>, Unbox<T>, Value<T>
+
+## BoxedList
+
+## BoxedGenerator
+<!--
 A Array.map() is a very useful function but, unfortunately, it only works with synchronous functions. A simple workaround for using async map functions is to use Promise.all() or its more tolerant brother Promise.allSettled()
 
 There’s a catch though: unlike a “normal” .map(), the map functions will not execute serially. The async map functions will be running at the same time. Although JavaScript is normally a single-threaded language, it means the resources allocated (like memory and ports) for each function will be occupied until the promise is resolved or rejected. For huge arrays, however, we are going to run a huge number of map functions at the same time.
