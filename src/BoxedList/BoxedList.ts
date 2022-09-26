@@ -273,8 +273,12 @@ export class BoxedList<T> implements IUnboxList<T>, IUnbox<T[]>, IMapItems<T> {
   //   // return this.value.every(item => Array.isArray(item));
   // }
 
+  // get =============================================-| length |-====
+  public get length(): number {
+    return this.unbox<T>().length;
+  }
   // get ===============================================-| list |-====
-  public get list() {
+  public get list(): T[] {
     return this.unbox<T>();
   }
 
@@ -293,4 +297,6 @@ function minusOne(x: number) {
   return x - 1;
 }
 
-console.log(ap([plusOne, minusOne], [1, 2, 3]));
+export function main() {
+  console.log(ap([plusOne, minusOne], [1, 2, 3]));
+}

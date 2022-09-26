@@ -169,7 +169,7 @@ export class BoxedGenerator<T> implements IUnboxList<T>, IUnbox<T[]> {
   }
 
   // public ====================================-| sparkAsync() |-====
-  public async asyncSpark() {
+  public async asyncSpark(): Promise<BoxedGenerator<Awaited<T>>> {
     const result = Promise.all(this.unbox().map(i => immediateZalgo(i)));
     return BoxedGenerator.of(...(await result));
   }
@@ -205,7 +205,7 @@ export class BoxedGenerator<T> implements IUnboxList<T>, IUnbox<T[]> {
   }
 
   // get ===============================================-| list |-====
-  public get list() {
+  public get list(): T[] {
     return this.unbox();
   }
 
@@ -214,6 +214,10 @@ export class BoxedGenerator<T> implements IUnboxList<T>, IUnbox<T[]> {
     return this.#valueGenerator;
   }
 }
+
+export const generatorOf = BoxedGenerator.of;
+export const generateFromGen = BoxedGenerator.fromGen;
+export const generateFrom = BoxedGenerator.from;
 
 export class PseudoCode<T> {
   public static of<TVal>(...values: TVal[] | [TVal[]]): PseudoCode<TVal> {
