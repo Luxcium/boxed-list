@@ -8,36 +8,175 @@
     "focus": false,
     "panel": "shared",
     "showReuseMessage": true,
-    "clear": true,
+    "clear": false,
     "revealProblems": "always",
-    "close": false,
-    "group": "watchers"
+    "close": false
   },
   "tasks": [
     {
+      "label": "Full Build Task",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Clean Install",
+        "Linting fix",
+        "Linting fix:json",
+        "Test and Build Task"
+      ],
+      "presentation": {
+        "close": true,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "always",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean Install",
+      "type": "shell",
+      "command": "npm",
+      "args": ["clean-install"],
+      "detail": "Install a project with a clean slate to make to do a clean install of dependencies.",
+      "group": "build",
+      "presentation": {
+        "close": false,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "always",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false
+      },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
       "label": "Linting",
-      "type": "npm",
-      "script": "fix:and:json",
+      "dependsOrder": "parallel",
+      "dependsOn": ["Linting fix", "Linting fix:json"],
       "detail": "Hard linting process for this Type-Script project",
       "group": "build",
       "presentation": {
-        "panel": "dedicated",
-        "group": "Linting",
-        "focus": false,
-        "echo": false,
-        "clear": true,
+        "close": true,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "never",
         "revealProblems": "onProblem",
-        "reveal": "always",
-        "showReuseMessage": true
+        "showReuseMessage": false
       },
       "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Linting fix",
+      "type": "npm",
+      "script": "fix",
+      "detail": "Hard linting process for this Type-Script project.",
+      "group": "build",
+      "presentation": {
+        "close": false,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "never",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false
+      },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Linting fix:json",
+      "type": "npm",
+      "script": "fix:json",
+      "detail": "Hard linting process of JSON files for this Type-Script project.",
+      "group": "build",
+      "presentation": {
+        "close": false,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "never",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false
+      },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Test and Build Task",
+      "type": "shell",
+      "detail": "Output watcher for this Type-Script project",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Testing", "npm build:task", "Documenting"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "close": true,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "never",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Documenting",
+      "type": "npm",
+      "script": "make:docs",
+      "detail": "Convert comments in TypeScript source code into rendered HTML documentation.",
+      "group": "build",
+      "presentation": {
+        "close": false,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "never",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false
+      },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Testing",
+      "type": "npm",
+      "script": "test",
+      "detail": "Testing process for this Type-Script project.",
+      "group": "test",
+      "presentation": {
+        "close": false,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "never",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false
+      },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "npm build:task",
+      "type": "npm",
+      "script": "build:task",
+      "detail": "NPM Main build:task",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "isBackground": false,
+      "presentation": {
+        "close": false,
+        "group": "Main Builder",
+        "panel": "shared",
+        "reveal": "never",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false
+      },
+      "problemMatcher": {
+        "base": "$tsc",
+        "applyTo": "allDocuments",
+        "severity": "info"
+      }
     },
     {
       "label": "TSC Build Task",
       "type": "shell",
       "detail": "Output watcher for this Type-Script project",
       "command": "npx",
-      "dependsOn": ["Linting"],
       "group": {
         "kind": "build",
         "isDefault": true
@@ -57,14 +196,11 @@
         "runOn": "default"
       },
       "presentation": {
-        "clear": true,
-        "echo": true,
-        "focus": false,
-        "group": "TSC Builder",
-        "panel": "dedicated",
+        "close": false,
+        "group": "Main Builder",
+        "panel": "shared",
         "reveal": "never",
         "revealProblems": "onProblem",
-        "close": false,
         "showReuseMessage": false
       },
       "problemMatcher": {
@@ -72,6 +208,128 @@
         "applyTo": "allDocuments",
         "severity": "info"
       }
+    },
+    {
+      "label": "Make and Show docs",
+      "detail": "Convert comments in source code and serve rendered HTML documentation.",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Documenting", "Show Docs"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "close": false,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "never",
+        "revealProblems": "never",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Test and Coverage",
+      "detail": "Output watcher for this Type-Script project",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Testing", "Show Coverage"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "close": true,
+        "group": "Builder",
+        "panel": "shared",
+        "reveal": "never",
+        "revealProblems": "never",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Show Coverage",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/server-coverage.sh",
+      "detail": "Display coverage results in Google Chrome.",
+      "group": "none",
+      "isBackground": true,
+      "presentation": {
+        "close": false,
+        "group": "Server:8100",
+        "panel": "dedicated",
+        "reveal": "never",
+        "revealProblems": "never",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Show Docs",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/server-docs.sh",
+      "detail": "Display documentation in Google Chrome.",
+      "group": "none",
+      "isBackground": true,
+      "presentation": {
+        "close": false,
+        "group": "Server:8200",
+        "panel": "dedicated",
+        "reveal": "never",
+        "revealProblems": "never",
+        "showReuseMessage": false
+      }
     }
   ]
 }
+/*
+
+"fix:and:json"
+"fix:json"
+"fix"
+"lint:fix:json"
+"lint:fix"
+"prefix"
+"pretty:fix:all"
+"pretty:fix:json"
+"pretty:fix"
+
+
+
+"base:build"
+"base:prerelease"
+"base:release"
+"base:check"
+"base:prestart"
+"base:start"
+"base:quick:start"
+"base:check:version"
+"base:lint"
+"base:test"
+"prebuild"
+"build"
+"precibuild"
+"cibuild"
+"postcibuild"
+"coverage"
+"pretty"
+"lint"
+"lint:json"
+"pretty:all"
+"test"
+"precheck"
+"check"
+"postcheck"
+"tsc:version"
+"make:docs"
+
+    "lint:fix": "npx eslint \"./src/** /*.*\" --fix || exit 1",
+    "lint:fix:json": "eslint \"** /*.{jsonc,json}\" --fix || exit 1",
+    "pretty:fix": "npx prettier --config \"./.prettierrc\" --loglevel log -c -w \"./src/** /*.*\" || exit 1",
+    "pretty:fix:json": "npx prettier --config \"./.prettierrc\" --loglevel log -c -w \"** /*.{jsonc,json}\" || exit 1",
+    "pretty:fix:all": "prettier --config \"./.prettierrc\" --loglevel log -c -w \"** /*.*\" || exit 1",
+    "prefix": "#npx eslint --print-config src/index.ts | npx eslint-config-prettier-check || exit 1",
+    "fix": "npm run lint:fix && npm run pretty:fix || exit 4",
+    "fix:json": "npm run lint:fix:json && npm run pretty:fix:json || exit 4",
+    "fix:and:json": "npm run fix:json && npm run fix || exit 8",
+    "precheck": "npm run fix || exit 5",
+
+
+*/
