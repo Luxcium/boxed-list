@@ -85,7 +85,7 @@ export interface IMap<T> extends IUnbox<T> {
   ): IMap<R> & IUnbox<R>; //& IStaticBox<IMap<R> & IUnbox<R>>;
 }
 
-export interface IStaticBox<T> {
-  new (): T;
-  of(): T;
+export interface IStaticBox<BoxedType> {
+  of<TVal>(value: TVal): BoxedType;
+  from<TVal>(box: IUnbox<TVal>): BoxedType;
 }

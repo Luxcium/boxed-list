@@ -47,7 +47,7 @@ We propose you 3 kinds of boxes to handle this usecases:
 
     To put something inside the box use the static method *of*: `Box.of<string>('something')` where the generic type anotation is optional. it can contain any value.
 
- - **A Functor** of return type `Box<R>`
+ - **A Functor and a Map** of return type `Box<R>`
 
     To interact on the internal value use the instance method *map*: `box.map<number>(something => something.length)` where the optional generic type anotation is the `R` return type of the mapping function.
 
@@ -60,7 +60,7 @@ We propose you 3 kinds of boxes to handle this usecases:
 
   - **A Chain** of return type `Box<R>`
 
-    The chain method takes one argument, it must be a function which returns a value. This function must return a value of the `Box` type and the chain itself will return a value of the `Box` type.
+    The chain instance method *chain*: `box.chain(something=>Box.of(something.toUpperCase()))` takes one argument, it must be a function which returns a value. This function must return a value of the `Box<R>` type and the chain itself will return a value of the `Box<R>` type.
 
   Applicative Apply<T>, Chain<T>, Map<T>, Unbox<T>, Value<T>
 

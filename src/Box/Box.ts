@@ -59,7 +59,7 @@ export class Box<T>
   public 'fantasy-land/chain' = this.chain;
   // public IChain<T> ===============================-| chain() |-====
   public chain<R>(fn: (value: T) => Box<R>): Box<R> {
-    return this.map<Box<R>>(fn).value;
+    return this.map<Box<R>>(fn).unbox().box;
   }
   // public IUnbox<T> ===============================-| unbox() |-====
   public unbox(): T {
