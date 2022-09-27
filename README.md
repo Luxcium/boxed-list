@@ -42,6 +42,8 @@ We propose you 3 kinds of boxes to handle this usecases:
 
 ## Box\<T\>
 
+**implements IApply<T>, IChain<T>, IMap<T>, IUnbox<T>, IBox<T>, IValue<T>**
+
 **Box is:**
  - **An Applicative** of type `Box<T>`
 
@@ -62,7 +64,7 @@ We propose you 3 kinds of boxes to handle this usecases:
 
     The chain instance method *chain*: `box.chain(chocolates=>Box.of(chocolates.toUpperCase()))` takes one argument, it must be a function which returns a value. This function must return a value of the `Box<R>` type and the chain itself will return a value of the `Box<R>` type.
 
-  Applicative Apply<T>, Chain<T>, Map<T>, Unbox<T>, Value<T>
+
 
 ## BoxedList
 
