@@ -1,11 +1,11 @@
 import { Box, boxFrom, boxOf } from '..';
 
 describe('Testing Box specification', () => {
-  test.skip('Box `of` static method', () => {
+  test('Box `of` static method', () => {
     expect(Box.of('Chocolates')).toStrictEqual(Box.of('Chocolates'));
   });
 
-  test.skip('Box `from` static method', () => {
+  test('Box `from` static method', () => {
     const box = Box.of('Chocolates');
 
     expect(Box.from(box)).toStrictEqual(Box.of('Chocolates'));
