@@ -4,7 +4,7 @@ import type { IApply, IBox, IChain, IMap, IUnbox, IValue } from '../types';
  * This is the doc comment for Box class
  *
  */
-export default class Box<T>
+export class Box<T>
   implements IApply<T>, IChain<T>, IMap<T>, IUnbox<T>, IBox<T>, IValue<T>
 {
   #value: T;
@@ -31,18 +31,19 @@ export default class Box<T>
       enumerable: false,
       configurable: false,
     });
-
+    Object.defineProperty(this, 'fantasy-land/ap', {
+      value: this.ap,
+      writable: false,
+      enumerable: false,
+      configurable: false,
+    });
+    Object.defineProperty(this, 'fantasy-land/chain', {
+      value: this.chain,
+      writable: false,
+      enumerable: false,
+      configurable: false,
+    });
     return this;
-  }
-
-  // public IApply<T> ==================================-| ap() |-====
-  public ap<R>(c: IMap<(val: T) => R>) {
-    return this.map<R>(val => c.map(fn => fn(val)).unbox());
-  }
-
-  // public IChain<T> ===============================-| chain() |-====
-  public chain<R>(fn: (value: T) => R) {
-    return this.map(fn).value;
   }
 
   public 'fantasy-land/map' = this.map;
@@ -50,23 +51,27 @@ export default class Box<T>
   public map<R>(fn: (value: T, index?: -1) => R): Box<R> {
     return Box.of(fn(this.#value, -1));
   }
-
-  // public IUnbox<T> ===============================-| unbox() |-====
-  public unbox(): T {
-    return this.#value;
+  public 'fantasy-land/ap' = this.ap;
+  // public IApply<T> ==================================-| ap() |-====
+  public ap<R>(c: Box<(val: T) => R>): Box<R> {
+    return this.map<R>(val => c.map(fn => fn(val)).unbox());
+  }
+  public 'fantasy-land/chain' = this.chain;
+  // public IChain<T> ===============================-| chain() |-====
+  public chain<R>(fn: (value: T) => Box<R>): Box<R> {
+    return this.map<Box<R>>(fn).value;
   }
   // public IUnbox<T> ===============================-| unbox() |-====
-  public join(): T {
+  public unbox(): T {
     return this.#value;
   }
   // get IBox<T> ========================================-| box |-====
   public get box() {
     return Box.of(this.unbox());
   }
-
   // get IValue<T> ====================================-| value |-====
   public get value() {
     return this.unbox();
   }
 }
-export { Box };
+export default Box;
