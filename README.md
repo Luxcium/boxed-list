@@ -45,22 +45,22 @@ We propose you 3 kinds of boxes to handle this usecases:
 **Box is:**
  - **An Applicative** of type `Box<T>`
 
-    To put something inside the box use the static method *of*: `Box.of<string>('something')` where the generic type anotation is optional. it can contain any value.
+    To put something inside the box use the static method *of*: `Box.of<string>('chocolates')` where the generic type anotation is optional. it can contain any value.
 
  - **A Functor and a Map** of return type `Box<R>`
 
-    To interact on the internal value use the instance method *map*: `box.map<number>(something => something.length)` where the optional generic type anotation is the `R` return type of the mapping function.
+    To interact on the internal value use the instance method *map*: `box.map<number>(chocolates => chocolates.length)` where the optional generic type anotation is the `R` return type of the mapping function.
 
  - **An Unbox and a Value** of return type `<T>`
 
    To extract the contained value of your box you can use the instance method *box*: `box.unbox()` or tap on it's alias, the instance property *value*: `box.value` after chaining many transformation with map it looks pretty elegant and satifying to tap on the internal value using a property so easely.
 
   - **An Apply** of return type `Box<R>`
-    To interact with the value inside a given box use a boxed function as the argument to the instance method *ap*: `box.ap(Box.of(something=>something.toUpperCase()))`
+    To interact with the value inside a given box use a boxed function as the argument to the instance method *ap*: `box.ap(Box.of(chocolates=>chocolates.toUpperCase()))`
 
   - **A Chain** of return type `Box<R>`
 
-    The chain instance method *chain*: `box.chain(something=>Box.of(something.toUpperCase()))` takes one argument, it must be a function which returns a value. This function must return a value of the `Box<R>` type and the chain itself will return a value of the `Box<R>` type.
+    The chain instance method *chain*: `box.chain(chocolates=>Box.of(chocolates.toUpperCase()))` takes one argument, it must be a function which returns a value. This function must return a value of the `Box<R>` type and the chain itself will return a value of the `Box<R>` type.
 
   Applicative Apply<T>, Chain<T>, Map<T>, Unbox<T>, Value<T>
 
