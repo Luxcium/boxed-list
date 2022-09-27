@@ -45,9 +45,13 @@ We propose you 3 kinds of boxes to handle this usecases:
 **implements `IApply<T>`, `IChain<T>`, `IMap<T>`, `IUnbox<T>`, `IBox<T>`, `IValue<T>`**
 
 **Box is:**
- - **An Applicative** of type `Box<T>`
+ - **An Applicative** of type `Box<TVal>`
 
-    To put something inside the box use the static method *of*: `Box.of<string>('chocolates')` where the generic type anotation is optional. it can contain any value.
+    To put something inside a new box use the static method *of*: `Box.of<string>('chocolates')` where the generic type anotation is optional. it can contain any `TVal` value.
+
+ - **A From** of type `Box<TVal>`
+
+    An alternative to the *of* static method to put something inside a new box is to use the static method *from*: `Box.from<string>(chocolateBox)` where the difference is taht you will need to provide any subBox type that implements the `IUnbox<T>` interface and the *unbox* instance method. it can contain any `TVal` value.
 
  - **A Functor and a Map** of return type `Box<R>`
 
