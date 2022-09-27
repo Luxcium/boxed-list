@@ -26,7 +26,7 @@ describe('Testing Box specification', () => {
 
   test('Box `chain` method', () => {
     const box = Box.of(12);
-    expect(box.chain(val => val * 1 + 0)).toBe(12);
+    expect(box.chain(val => Box.of(val * 2 + 6))).toStrictEqual(Box.of(30));
   });
 
   test('Box `unbox` method', () => {
