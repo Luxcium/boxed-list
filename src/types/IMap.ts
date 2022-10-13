@@ -89,3 +89,5 @@ export interface IStaticBox<BoxedType> {
   of<TVal>(value: TVal): BoxedType;
   from<TVal>(box: IUnbox<TVal>): BoxedType;
 }
+
+[1, 2, 3, 4, 5].map(x => x * 2).map(x => x + 2); // [2,4,6,8,10]

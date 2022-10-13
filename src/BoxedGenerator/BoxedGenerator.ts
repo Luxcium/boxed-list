@@ -215,6 +215,40 @@ export class BoxedGenerator<T> implements IUnboxList<T>, IUnbox<T[]> {
   }
 }
 
+// interface Extracted<T> {
+//   map<TMap>(
+//     // delay: undefined | null | number | boolean = false
+//     fn: Mapper<T, TMap>
+//   ): BoxedGenerator<TMap>;
+//   /* TODO: add the missing return type */
+//   awaitedMap<TMap>(fn: Mapper<Awaited<T>, Promise<TMap>>): any;
+//   thenMap<TMap1, TMap2 = never>(
+//     onfulfilled?: ThenMapper<T, TMap1> | null,
+//     onrejected?: ((reason: any) => TMap2 | PromiseLike<TMap2>) | null
+//   ): BoxedGenerator<Promise<TMap1 | TMap2>>;
+//   catchMap<  TMap2 = never>(onrejected?: ((reason: any) => TMap2 | PromiseLike<TMap2>) | null): BoxedGenerator<Promise<T | TMap2>>;
+//   finallyMap(
+//     // ThenMapper<T, TMap1> | null,
+//     // onrejected?: ((reason: any) => TMap2 | PromiseLike<TMap2>) | null
+//     onfinally: (() => void) | null
+//   ): BoxedGenerator<Promise<T>>;
+//   unbox(): R_unsafe[];
+//   asyncUnbox(): Promise<T[]>;
+//   /* TODO: add the missing return type */
+//   spark(): any;
+//   asyncSpark(): Promise<BoxedGenerator<Awaited<T>>>;
+//   keys(): IterableIterator<number>;
+//   values(): IterableIterator<T>;
+//   Symbol.iterator(): Generator<T, void, undefined>;
+//   /* TODO: add the missing return type */
+//   box(): any;
+//   /* TODO: add the missing return type */
+//   length(): any;
+//   boxedList(): BoxedList<T>;
+//   list(): T[];
+//   gen(): () => Generator<T>;
+// }
+
 export const generatorOf = BoxedGenerator.of;
 export const generateFromGen = BoxedGenerator.fromGen;
 export const generateFrom = BoxedGenerator.from;

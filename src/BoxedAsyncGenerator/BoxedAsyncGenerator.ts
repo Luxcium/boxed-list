@@ -6,9 +6,9 @@ export class BoxedAsyncGenerator<T> {
   #valueAsyncGenerator: () => AsyncGenerator<T>;
 
   public static fromGen = <TVal>(
-    generatorFn: () => AsyncGenerator<TVal>
+    asyncGeneratorFn: () => AsyncGenerator<TVal>
   ): BoxedAsyncGenerator<TVal> => {
-    return new BoxedAsyncGenerator<TVal>(generatorFn);
+    return new BoxedAsyncGenerator<TVal>(asyncGeneratorFn);
   };
 
   // static ==========================================-| from() |-====

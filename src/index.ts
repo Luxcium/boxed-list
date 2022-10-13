@@ -4,6 +4,7 @@
  */
 
 export { Box, boxFrom, boxOf } from './Box';
+export { BoxedAsyncGenerator } from './BoxedAsyncGenerator/BoxedAsyncGenerator';
 export {
   BoxedGenerator,
   generateFrom,
@@ -22,5 +23,3 @@ export type {
   IValue,
 } from './types';
 export { cpuCount } from './utils';
-
-// export { BoxedAsyncGenerator } from './BoxedAsyncGenerator/BoxedAsyncGenerator';
